@@ -1,0 +1,39 @@
+{
+    "name": "hire-prep-frontend",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "eslint"
+    },
+    "dependencies": {
+        "axios": "^1.13.2",
+        "next": "16.1.1",
+        "react": "19.2.3",
+        "react-dom": "19.2.3",
+        "react-hot-toast": "^2.6.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9",
+        "@next/eslint-plugin-next": "^16.1.1",
+        "@tailwindcss/oxide": "^4.1.18",
+        "@tailwindcss/postcss": "^4.1.18",
+        "@types/node": "^20",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "eslint": "^9",
+        "eslint-config-next": "16.1.1",
+        "eslint-config-prettier": "^9",
+        "eslint-import-resolver-typescript": "^3",
+        "eslint-plugin-import": "^2",
+        "eslint-plugin-prettier": "^5",
+        "eslint-plugin-react": "^7",
+        "globals": "^15",
+        "prettier": "^3",
+        "tailwindcss": "^4.1.18",
+        "typescript": "^5",
+        "typescript-eslint": "^8"
+    }
+}

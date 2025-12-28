@@ -1,0 +1,479 @@
+@import 'tailwindcss';
+
+:root {
+    --background: #fafafa;
+    --foreground: #1a1a1a;
+    --muted: #f5f5f5;
+    --muted-foreground: #737373;
+    --border: #e5e5e5;
+
+    --primary-light: #f87171;
+    --primary: #ef4444;
+    --primary-dark: #dc2626;
+    --primary-foreground: #ffffff;
+
+    --secondary-light: #f87171;
+    --secondary: #dc2626;
+    --secondary-dark: #b91c1c;
+    --secondary-foreground: #ffffff;
+
+    --accent-light: #f87171;
+    --accent: #ef4444;
+    --accent-dark: #dc2626;
+    --accent-foreground: #ffffff;
+
+    /* Card */
+    --card: #ffffff;
+    --card-foreground: #1a1a1a;
+
+    /* Semantic colors */
+    --info-light: #bfdbfe;
+    --info: #3b82f6;
+    --info-dark: #2563eb;
+
+    --success-light: #86efac;
+    --success: #22c55e;
+    --success-dark: #16a34a;
+
+    --warning-light: #fcd34d;
+    --warning: #f59e0b;
+    --warning-dark: #d97706;
+
+    --danger-light: #fca5a5;
+    --danger: #ef4444;
+    --danger-dark: #dc2626;
+}
+
+@theme inline {
+    /* Base */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-border: var(--border);
+
+    /* Primary */
+    --color-primary-light: var(--primary-light);
+    --color-primary: var(--primary);
+    --color-primary-dark: var(--primary-dark);
+    --color-primary-foreground: var(--primary-foreground);
+
+    /* Secondary */
+    --color-secondary-light: var(--secondary-light);
+    --color-secondary: var(--secondary);
+    --color-secondary-dark: var(--secondary-dark);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    /* Accent */
+    --color-accent-light: var(--accent-light);
+    --color-accent: var(--accent);
+    --color-accent-dark: var(--accent-dark);
+    --color-accent-foreground: var(--accent-foreground);
+
+    /* Card */
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    /* Semantic - Info */
+    --color-info-light: var(--info-light);
+    --color-info: var(--info);
+    --color-info-dark: var(--info-dark);
+
+    /* Semantic - Success */
+    --color-success-light: var(--success-light);
+    --color-success: var(--success);
+    --color-success-dark: var(--success-dark);
+
+    /* Semantic - Warning */
+    --color-warning-light: var(--warning-light);
+    --color-warning: var(--warning);
+    --color-warning-dark: var(--warning-dark);
+
+    /* Semantic - Danger */
+    --color-danger-light: var(--danger-light);
+    --color-danger: var(--danger);
+    --color-danger-dark: var(--danger-dark);
+
+    /* Breakpoints */
+    --breakpoint-xs: 480px;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+    --breakpoint-3xl: 2560px;
+
+    /* Font Sizes */
+    --font-size-10: 10px;
+    --font-size-12: 12px;
+    --font-size-13: 13px;
+    --font-size-14: 14px;
+    --font-size-15: 15px;
+    --font-size-16: 16px;
+    --font-size-18: 18px;
+    --font-size-20: 20px;
+    --font-size-24: 24px;
+    --font-size-28: 28px;
+    --font-size-32: 32px;
+    --font-size-40: 40px;
+    --font-size-48: 48px;
+    --font-size-64: 64px;
+    --font-size-72: 72px;
+    --font-size-96: 96px;
+    --font-size-128: 128px;
+    --font-size-144: 144px;
+    --font-size-192: 192px;
+
+    /* Fonts */
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+
+    /* Z-Index */
+    --z-100: 100;
+    --z-200: 200;
+    --z-300: 300;
+    --z-400: 400;
+    --z-500: 500;
+    --z-600: 600;
+    --z-700: 700;
+    --z-800: 800;
+    --z-900: 900;
+    --z-1000: 1000;
+    --z-1500: 1500;
+    --z-2000: 2000;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0f0f0f;
+        --foreground: #fafafa;
+        --muted: #1f1f1f;
+        --muted-foreground: #a3a3a3;
+        --border: #2a2a2a;
+
+        --primary-light: #f87171;
+        --primary: #ef4444;
+        --primary-dark: #dc2626;
+        --primary-foreground: #ffffff;
+
+        --secondary-light: #f87171;
+        --secondary: #dc2626;
+        --secondary-dark: #b91c1c;
+        --secondary-foreground: #ffffff;
+
+        --accent-light: #f87171;
+        --accent: #ef4444;
+        --accent-dark: #dc2626;
+        --accent-foreground: #ffffff;
+
+        --card: #1a1a1a;
+        --card-foreground: #fafafa;
+
+        --info-light: #1e3a8a;
+        --info: #60a5fa;
+        --info-dark: #93c5fd;
+
+        --success-light: #14532d;
+        --success: #34d399;
+        --success-dark: #6ee7b7;
+
+        --warning-light: #78350f;
+        --warning: #fbbf24;
+        --warning-dark: #fde047;
+
+        --danger-light: #7f1d1d;
+        --danger: #f87171;
+        --danger-dark: #fca5a5;
+    }
+}
+
+/* Class-based dark mode for manual toggle */
+.dark {
+    --background: #0f0f0f;
+    --foreground: #fafafa;
+    --muted: #1f1f1f;
+    --muted-foreground: #a3a3a3;
+    --border: #2a2a2a;
+
+    --primary-light: #f87171;
+    --primary: #ef4444;
+    --primary-dark: #dc2626;
+    --primary-foreground: #ffffff;
+
+    --secondary-light: #f87171;
+    --secondary: #dc2626;
+    --secondary-dark: #b91c1c;
+    --secondary-foreground: #ffffff;
+
+    --accent-light: #f87171;
+    --accent: #ef4444;
+    --accent-dark: #dc2626;
+    --accent-foreground: #ffffff;
+
+    --card: #1a1a1a;
+    --card-foreground: #fafafa;
+
+    --info-light: #1e3a8a;
+    --info: #60a5fa;
+    --info-dark: #93c5fd;
+
+    --success-light: #14532d;
+    --success: #34d399;
+    --success-dark: #6ee7b7;
+
+    --warning-light: #78350f;
+    --warning: #fbbf24;
+    --warning-dark: #fde047;
+
+    --danger-light: #7f1d1d;
+    --danger: #f87171;
+    --danger-dark: #fca5a5;
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Gradient backgrounds */
+.gradient-primary {
+    background: linear-gradient(
+        135deg,
+        var(--primary) 0%,
+        var(--primary-dark) 100%
+    );
+}
+
+.gradient-secondary {
+    background: linear-gradient(
+        135deg,
+        var(--secondary) 0%,
+        var(--secondary-dark) 100%
+    );
+}
+
+.gradient-accent {
+    background: linear-gradient(
+        135deg,
+        var(--accent) 0%,
+        var(--accent-dark) 100%
+    );
+}
+
+.gradient-mesh {
+    background:
+        radial-gradient(at 0% 0%, rgba(239, 68, 68, 0.08) 0px, transparent 50%),
+        radial-gradient(
+            at 100% 0%,
+            rgba(220, 38, 38, 0.08) 0px,
+            transparent 50%
+        ),
+        radial-gradient(
+            at 100% 100%,
+            rgba(239, 68, 68, 0.08) 0px,
+            transparent 50%
+        ),
+        radial-gradient(
+            at 0% 100%,
+            rgba(220, 38, 38, 0.05) 0px,
+            transparent 50%
+        );
+}
+
+/* Keyframes */
+@keyframes wiggle {
+    0%,
+    100% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
+@keyframes emerge {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes emergeUp {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleDown {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse-glow {
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 20px 10px rgba(239, 68, 68, 0);
+    }
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Utility Classes */
+.animate-wiggle {
+    animation: wiggle 1s ease-in-out infinite;
+}
+.animate-emerge {
+    animation: emerge 0.2s ease-in;
+}
+.animate-fade {
+    animation: fade 0.2s ease-out forwards;
+}
+.animate-emerge-up {
+    animation: emergeUp 0.2s ease-in;
+}
+.animate-slide-up {
+    animation: slideUp 0.2s ease-in;
+}
+.animate-slide-down {
+    animation: slideDown 0.2s ease-out forwards;
+}
+.animate-scale-up {
+    animation: scaleUp 0.2s ease-in;
+}
+.animate-scale-down {
+    animation: scaleDown 0.2s ease-out forwards;
+}
+.animate-spin-slow {
+    animation: spin 3s linear infinite;
+}
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+.animate-gradient-shift {
+    animation: gradient-shift 3s ease infinite;
+    background-size: 200% 200%;
+}
+.animate-bounce-in {
+    animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+.animate-gradient-shift {
+    animation: gradient-shift 3s ease infinite;
+    background-size: 200% 200%;
+}
+.animate-bounce-in {
+    animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}

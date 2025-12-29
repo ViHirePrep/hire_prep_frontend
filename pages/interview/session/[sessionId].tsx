@@ -10,7 +10,7 @@ type InterviewStage = 'loading' | 'device-test' | 'interview' | 'complete';
 
 interface SessionData {
     id: string;
-    questions: Array<{
+    interviewQuestions: Array<{
         id: string;
         questionText: string;
         questionType: 'TEXT' | 'VIDEO';
@@ -114,7 +114,7 @@ export default function InterviewSessionPage() {
         return (
             <InterviewSession
                 sessionId={sessionData.id}
-                questions={sessionData.questions}
+                questions={sessionData.interviewQuestions}
                 onComplete={handleInterviewComplete}
             />
         );

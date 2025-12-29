@@ -11,6 +11,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: ButtonVariant;
     size?: ButtonSize;
     children: ReactNode;
+    isLoading?: boolean;
 }
 
 export default function Button({
@@ -19,6 +20,7 @@ export default function Button({
     className = '',
     children,
     disabled,
+    isLoading,
     ...props
 }: ButtonProps) {
     return (
@@ -29,8 +31,9 @@ export default function Button({
         ${BUTTON_SIZES[size]}
         ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
         ${className}
+        ${isLoading ? 'relative bg-gray-500 pointer-events-none' : ' '}
       `}
-            disabled={disabled}
+            disabled={disabled || isLoading}
             {...props}
         >
             {children}

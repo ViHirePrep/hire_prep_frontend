@@ -10,19 +10,17 @@ import Card from '@/components/system/Card';
 import { useToast } from '@/lib/hooks/useToast';
 import { getCurrentUser } from '@/lib/api';
 
-interface AIProvider {
-    alias: string;
-    displayName: string;
-    baseProvider: string;
-    priority: number;
-}
+// interface AIProvider {
+//     alias: string;
+//     displayName: string;
+//     baseProvider: string;
+//     priority: number;
+// }
 
 export default function CreateInterviewPage() {
     const router = useRouter();
     const toast = useToast();
     const [loading, setLoading] = useState(false);
-    const [loadingProviders, setLoadingProviders] = useState(true);
-    const [aiProviders, setAIProviders] = useState<AIProvider[]>([]);
     const [formData, setFormData] = useState({
         position: '',
         industry: 'IT',
@@ -36,7 +34,6 @@ export default function CreateInterviewPage() {
     });
 
     useEffect(() => {
-        // Check if user is authenticated
         const user = getCurrentUser();
 
         if (!user) {
@@ -45,31 +42,31 @@ export default function CreateInterviewPage() {
             return;
         }
 
-        fetchAIProviders();
+        // fetchAIProviders();
     }, []);
 
-    const fetchAIProviders = async () => {
-        try {
-            const response = await fetch(
-                `${process.env.NEXT_PUBLIC_API_URL}/ai-providers`,
-            );
-            const providers = await response.json();
+    // const fetchAIProviders = async () => {
+    //     try {
+    //         const response = await fetch(
+    //             `${process.env.NEXT_PUBLIC_API_URL}/ai-providers`,
+    //         );
+    //         const providers = await response.json();
 
-            setAIProviders(providers);
-            if (providers.length > 0) {
-                setFormData((prev) => ({
-                    ...prev,
-                    aiProvider: providers[0].alias,
-                }));
-            }
-        } catch {
-            toast.error(
-                'Failed to load AI providers. Please refresh the page.',
-            );
-        } finally {
-            setLoadingProviders(false);
-        }
-    };
+    //         // setAIProviders(providers);
+    //         // if (providers.length > 0) {
+    //         //     setFormData((prev) => ({
+    //         //         ...prev,
+    //         //         aiProvider: providers[0].alias,
+    //         //     }));
+    //         // }
+    //     } catch {
+    //         toast.error(
+    //             'Failed to load AI providers. Please refresh the page.',
+    //         );
+    //     } finally {
+    //         setLoadingProviders(false);
+    //     }
+    // };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -106,13 +103,13 @@ export default function CreateInterviewPage() {
         }
     };
 
-    if (loadingProviders) {
-        return (
-            <div className="min-h-screen bg-linear-to-br from-primary/5 via-white to-accent/5 flex items-center justify-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-            </div>
-        );
-    }
+    // if (loadingProviders) {
+    //     return (
+    //         <div className="min-h-screen bg-linear-to-br from-primary/5 via-white to-accent/5 flex items-center justify-center">
+    //             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+    //         </div>
+    //     );
+    // }
 
     return (
         <div className="min-h-screen bg-linear-to-br from-primary/5 via-white to-accent/5 py-12 px-4">
@@ -336,7 +333,7 @@ export default function CreateInterviewPage() {
                             </div>
 
                             <div className="grid md:grid-cols-2 gap-6">
-                                <div>
+                                {/* <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                                         AI Model
                                     </label>
@@ -359,7 +356,7 @@ export default function CreateInterviewPage() {
                                             </option>
                                         ))}
                                     </Select>
-                                </div>
+                                </div> */}
 
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">

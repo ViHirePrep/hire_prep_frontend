@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ReadmePage = () => {
     return (
         <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -202,7 +200,7 @@ const ReadmePage = () => {
                                 Upload JD (PDF/DOC) → extract text
                                 <ul className="list-circle pl-6 mt-2">
                                     <li>Sử dụng pdf-parse, docx-parser</li>
-                                    <li>Giới hạn &lt; 5000 từ</li>
+                                    <li>Giới hạn {'<'} 5000 từ</li>
                                 </ul>
                             </li>
                             <li>
@@ -347,9 +345,10 @@ const ReadmePage = () => {
                             <li>
                                 Tên AI model trong database chưa rõ
                                 <ul className="list-circle pl-6 mt-2">
-                                    <li>Hiện chỉ dùng chat API 4</li>
+                                    <li>Hiện chỉ dùng chat GPT 4</li>
                                     <li>
-                                        Database hiển thị chung là "ChatGPT"
+                                        Database hiển thị chung, cần đưa về tên
+                                        models cụ thể
                                     </li>
                                 </ul>
                             </li>

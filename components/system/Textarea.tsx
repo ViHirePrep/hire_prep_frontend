@@ -4,12 +4,23 @@ interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     label?: string;
     error?: string;
     helperText?: string;
+    containerClassName?: string;
 }
 
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-    ({ label, error, helperText, className = '', ...props }, ref) => {
+    (
+        {
+            label,
+            error,
+            helperText,
+            className = '',
+            containerClassName = '',
+            ...props
+        },
+        ref,
+    ) => {
         return (
-            <div className="w-full">
+            <div className={`w-full ${containerClassName}`}>
                 {label && (
                     <label className="mb-2 block text-sm font-medium text-zinc-700">
                         {label}

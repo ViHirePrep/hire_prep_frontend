@@ -211,6 +211,18 @@ export default function InterviewSession({
         return `${mins}:${secs.toString().padStart(2, '0')}`;
     };
 
+    const handleVideoAnswer = (answer: any) => {
+        setAnswers((prev) => {
+            const newAnswers = new Map(prev);
+            newAnswers.set(answer.questionId, {
+                type: 'video',
+                data: answer.data,
+                questionId: answer.questionId,
+            });
+            return newAnswers;
+        });
+    };
+
     if (sortedQuestions.length === 0 || !sortedQuestions[currentIndex]) {
         return (
             <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -291,16 +303,7 @@ export default function InterviewSession({
                                 hideControls={
                                     currentQuestion.questionType === 'TEXT'
                                 }
-                                onAnswer={(answer) => {
-                                    const newAnswers = new Map(answers);
-
-                                    newAnswers.set(answer.questionId, {
-                                        type: 'video',
-                                        data: answer.data,
-                                        questionId: answer.questionId,
-                                    });
-                                    setAnswers(newAnswers);
-                                }}
+                                onAnswer={handleVideoAnswer}
                             />
                         </div>
 

@@ -105,7 +105,11 @@ export default function VideoAnswer({
     }, []);
 
     useEffect(() => {
-        if (videoRef.current && streamRef.current) {
+        if (
+            videoRef.current &&
+            streamRef.current &&
+            videoRef.current.srcObject !== streamRef.current
+        ) {
             videoRef.current.srcObject = streamRef.current;
         }
     });

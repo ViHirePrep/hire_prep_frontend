@@ -214,11 +214,13 @@ export default function InterviewSession({
     const handleVideoAnswer = (answer: any) => {
         setAnswers((prev) => {
             const newAnswers = new Map(prev);
+
             newAnswers.set(answer.questionId, {
                 type: 'video',
                 data: answer.data,
                 questionId: answer.questionId,
             });
+
             return newAnswers;
         });
     };
